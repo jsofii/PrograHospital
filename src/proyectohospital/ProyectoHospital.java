@@ -16,7 +16,8 @@ public class ProyectoHospital {
      */
     public static void main(String[] args) {
         System.out.println("Hola amigos");
-        System.out.println("irfji");
+        System.out.println("no puedo usar github");
+       
         // TODO code application logic here
     }
     

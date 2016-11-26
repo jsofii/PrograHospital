@@ -5,6 +5,8 @@
  */
 package proyectohospital;
 
+import java.util.Scanner;
+
 /**
  *
  * @author USER
@@ -27,12 +29,33 @@ public class ProyectoHospital {
             System.out.println("3. Salir");
             System.out.println("Encuentrenos en: "+h.getDireccion().toString());
             inicio=sc.nextInt();
+            sc.nextLine();
             switch(inicio){
                 default:
                     System.out.println("Por favor, seleccione una opción válida");
                     break;
                 case 1:
-                    System.out.println("¿Qué tipo de usuario es?");
+                    int usuario;
+                    do{
+                        System.out.println("¿Qué tipo de usuario es?");
+                        System.out.println("1. Funcionario");
+                        System.out.println("2. Medico");
+                        System.out.println("3. Paciente");
+                        System.out.println("4. Atras");
+                        usuario=sc.nextInt();
+                        sc.nextLine();
+                        switch(usuario){
+                            case 1:
+                                System.out.println("Usted eligio funcionario");
+                                break;
+                            case 2:
+                                System.out.println("Usted eligio medico");
+                                break;
+                            case 3:
+                                System.out.println("Usted eligio paciente");
+                                break;
+                        }
+                    }while(usuario!=4);
                     break;
                 case 2:
                     System.out.print("Ingrese el nombre del hospital: ");
@@ -41,11 +64,12 @@ public class ProyectoHospital {
                     String calificacion=sc.nextLine();
                     System.out.print("Ingrese la capacidad del "+nombreh+": ");
                     int capacidadh=sc.nextInt();
+                    sc.nextLine();
                     System.out.print("Ingrese la calle principal del "+nombreh+": ");
                     String principal=sc.nextLine();
-                    System.out.println("Ingrese la calle secundaria del "+nombreh+": ");
+                    System.out.print("Ingrese la calle secundaria del "+nombreh+": ");
                     String secundaria=sc.nextLine();
-                    System.out.println("Ingrese el numero de calle del "+nombreh+": ");
+                    System.out.print("Ingrese el numero de calle del "+nombreh+": ");
                     String numero=sc.nextLine();
                     h.setHospital(nombreh, calificacion, capacidadh, principal, secundaria, numero);
                     System.out.println(h.getNombre()+" ingresado con exito");
@@ -56,5 +80,4 @@ public class ProyectoHospital {
             }
         }while(inicio !=3);
     }
-    
 }

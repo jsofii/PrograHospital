@@ -46,4 +46,13 @@ public class Hospital {
         this.capacidad = capacidad;
     }
     
+    public void setHospital(String nombre,String calificacion,int capacidad,String principal,String secundaria,String numero){
+        this.nombre=nombre;
+        this.calificacion=calificacion;
+        this.capacidad=capacidad;
+        this.direccion.setPrincipal(principal);
+        this.direccion.setSecundaria(secundaria);
+        this.direccion.setNumero(numero);
+    }
+    
 }
